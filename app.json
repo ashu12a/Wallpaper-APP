@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "nativeapp",
-    "slug": "nativeapp",
+    "name": "Pixels",
+    "slug": "pixels",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
