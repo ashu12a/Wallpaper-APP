@@ -3,7 +3,6 @@ import React from 'react'
 import { Text, View, StyleSheet, Image, Pressable } from 'react-native'
 import { hp, wp } from '../helpers/common'
 import { LinearGradient } from 'expo-linear-gradient'
-import Animated, { FadeInDown } from 'react-native-reanimated'
 import { theme } from '../contants/theme'
 import { useRouter } from 'expo-router'
 
@@ -18,7 +17,7 @@ const WelcomeScreen = () => {
                 resizeMode='cover'
             />
             {/* linear gradient  */}
-            <Animated.View entering={FadeInDown.duration(600)} style={{ flex: 1 }}>
+            <View style={{ flex: 1 }}>
                 <LinearGradient
                     colors={['rgba(255,255,255,0)', 'rgba(255,255,255,0.5)', 'white', 'white']}
                     style={styles.gradient}
@@ -27,27 +26,24 @@ const WelcomeScreen = () => {
                 />
                 {/* content  */}
                 <View style={styles.contentContainer}>
-                    <Animated.Text
-                    entering={FadeInDown.delay(400).springify()}
+                    <Text
                         style={styles.title}
                     >
-                        Pixels
-                    </Animated.Text>
-                    <Animated.Text
-                    entering={FadeInDown.delay(500).springify()}
+                        Pixel
+                    </Text>
+                    <Text
                         style={styles.punchline}
                     >
                         Every Pixel Tells a Story
-                    </Animated.Text>
-                    <Animated.View
-                    entering={FadeInDown.delay(600).springify()}
+                    </Text>
+                    <View
                     >
-                        <Pressable style={styles.startButton} onPress={()=>router.push('home')}>
+                        <Pressable style={styles.startButton} onPress={() => router.push('home')}>
                             <Text style={styles.startText}>Start Explore</Text>
                         </Pressable>
-                    </Animated.View>
+                    </View>
                 </View>
-            </Animated.View>
+            </View>
         </View>
     )
 }
@@ -67,36 +63,36 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
     },
-    contentContainer:{
-        flex:1,
-        alignItems:'center',
-        justifyContent:'flex-end',
-        gap:14
+    contentContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        gap: 14
     },
-    title:{
-        fontSize:hp(7),
-        color:theme.colors.neutral(0.9),
-        fontWeight:theme.fontWeights.bold,
+    title: {
+        fontSize: hp(7),
+        color: theme.colors.neutral(0.9),
+        fontWeight: theme.fontWeights.bold,
     },
-    punchline:{
-        fontSize:hp(2),
-        letterSpacing:1,
-        marginBottom:10,
-        fontWeight:theme.fontWeights.medium
+    punchline: {
+        fontSize: hp(2),
+        letterSpacing: 1,
+        marginBottom: 10,
+        fontWeight: theme.fontWeights.medium
     },
-    startButton:{
-        marginBottom:50,
-        backgroundColor:theme.colors.neutral(0.9),
-        padding:15,
-        paddingHorizontal:90,
-        borderRadius:theme.radius.xl,
-        borderCurve:'continous'
+    startButton: {
+        marginBottom: 50,
+        backgroundColor: theme.colors.neutral(0.9),
+        padding: 15,
+        paddingHorizontal: 90,
+        borderRadius: theme.radius.xl,
+        borderCurve: 'continous'
     },
-    startText:{
-        color:theme.colors.white,
-        fontSize:hp(3),
-        fontWeight:theme.fontWeights.medium,
-        letterSpacing:1
+    startText: {
+        color: theme.colors.white,
+        fontSize: hp(3),
+        fontWeight: theme.fontWeights.medium,
+        letterSpacing: 1
     }
 })
 export default WelcomeScreen

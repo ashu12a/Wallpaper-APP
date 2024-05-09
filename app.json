@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Pixels",
+    "name": "Pixel",
     "slug": "pixels",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -42,8 +42,9 @@
         "origin": false
       },
       "eas": {
-        "projectId": "e23cae09-c5b6-4f8b-a3c7-64df92136ba9"
+        "projectId": "ad102529-3b87-4df8-8f12-cc5012c07167"
       }
-    }
+    },
+    "owner": "ashutosh_sharma"
   }
 }
