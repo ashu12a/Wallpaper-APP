@@ -12,7 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ashu.pixels"
@@ -27,7 +29,10 @@
       "intentFilters": [
         {
           "action": "MAIN",
-          "category": ["LAUNCHER", "LEANBACK_LAUNCHER"]
+          "category": [
+            "LAUNCHER",
+            "LEANBACK_LAUNCHER"
+          ]
         }
       ]
     },
@@ -38,6 +43,13 @@
     },
     "plugins": [
       "expo-router",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-1054886942898046~7384318570",
+          "iosAppId": "ca-app-pub-xxxxxxxxxxxxxxxx~iosappid"
+        }
+      ],
       [
         "expo-build-properties",
         {

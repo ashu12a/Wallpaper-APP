@@ -5,6 +5,9 @@ import { hp, wp } from '../helpers/common'
 import { LinearGradient } from 'expo-linear-gradient'
 import { theme } from '../contants/theme'
 import { useRouter } from 'expo-router'
+import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads'
+
+const adUnitId = 'ca-app-pub-1054886942898046/2772858404';
 
 const WelcomeScreen = () => {
     const router = useRouter();
@@ -36,11 +39,21 @@ const WelcomeScreen = () => {
                     >
                         Every Pixel Tells a Story
                     </Text>
-                    <View
-                    >
+                    <View>
                         <Pressable style={styles.startButton} onPress={() => router.push('home')}>
                             <Text style={styles.startText}>Start Explore</Text>
                         </Pressable>
+
+                        {/* Banner Ad */}
+                        <View style={styles.bannerContainer}>
+                            <BannerAd
+                                unitId={adUnitId}
+                                size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+                                requestOptions={{
+                                    requestNonPersonalizedAdsOnly: true,
+                                }}
+                            />
+                        </View>
                     </View>
                 </View>
             </View>
@@ -51,6 +64,12 @@ const WelcomeScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1
+    },
+    bannerContainer: {
+        marginTop: 0,
+        marginBottom: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     bgImage: {
         width: wp(100),
@@ -81,7 +100,7 @@ const styles = StyleSheet.create({
         fontWeight: theme.fontWeights.medium
     },
     startButton: {
-        marginBottom: 50,
+        marginBottom: 20,
         backgroundColor: theme.colors.neutral(0.9),
         padding: 15,
         paddingHorizontal: 90,
