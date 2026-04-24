@@ -110,7 +110,7 @@ const CustomBackdrop = ({ animatedIndex, style }) => {
     const containerStyle = [
         StyleSheet.absoluteFill,
         style,
-        style.overlay,
+        styles.overlay,
         containerAnimatedStyle
     ];
     return (

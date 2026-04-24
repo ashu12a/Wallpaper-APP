@@ -21,9 +21,10 @@ const ImageGrid = ({ images = [], router }) => {
     const result = [];
 
     images.forEach((item, index) => {
+      const imageId = item?.id ?? item?.webformatURL ?? item?.largeImageURL ?? index;
       result.push({
         type: 'image',
-        id: `image-${item?.id ?? index}`,
+        id: `image-${imageId}`,
         data: item,
       });
 
@@ -72,6 +73,7 @@ const ImageGrid = ({ images = [], router }) => {
         data={dataWithAds}
         masonry
         numColumns={columns}
+        estimatedItemSize={280}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         getItemType={(item) => item.type}
